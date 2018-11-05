@@ -2,8 +2,7 @@ const gulp = require("gulp");
 const cleanCSS = require("gulp-clean-css") //压缩css
 const htmlmin = require("gulp-htmlmin"); //压缩html
 const uglify = require("gulp-uglify")
-    // const webserver = require("gulp-webserver")
-    // console.log(gulp)
+
 const autoprefixer = require("gulp-autoprefixer"); //增加浏览器前缀
 const sass = require("gulp-sass"); //编译sass
 
@@ -41,6 +40,6 @@ gulp.task("js", () => {
         .pipe(gulp.dest("dist"))
 })
 
-gulp.task("default", ["html", "css", "js"], () => {
+gulp.task("default", ["html", "css", "js", "sass"], () => {
     console.log("处理完毕")
 })
