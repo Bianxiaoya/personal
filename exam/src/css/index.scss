@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+@mixin num($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+p {
+    @include num(300px, 40px);
+    margin: 20px auto 0;
+    border-radius: 5px;
+    border: thin solid #ccc;
+    display: flex;
+    overflow: hidden;
+    input {
+        @include num(230px, 100%);
+        border: 0;
+    }
+    button {
+        flex: 1;
+        border: 0;
+    }
+    &:nth-child(2) button {
+        background: #3670af;
+        color: #fff;
+    }
+    &:nth-child(3) button {
+        background: #8ea446;
+        color: #fff;
+    }
+    &:nth-child(4) button {
+        background: #ab1b5b;
+        color: #fff;
+    }
+    &:nth-child(5) button {
+        background: #EE6418;
+        color: #fff;
+    }
+    &:nth-child(6) button {
+        background: #383838;
+        color: #fff;
+    }
+}
