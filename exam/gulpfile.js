@@ -5,7 +5,7 @@ const uglify = require("gulp-uglify")
     // const webserver = require("gulp-webserver")
     // console.log(gulp)
 const autoprefixer = require("gulp-autoprefixer"); //增加浏览器前缀
-// const 
+const sass = require("gulp-sass"); //编译sass
 
 //压缩html
 gulp.task("html", () => {
@@ -21,6 +21,14 @@ gulp.task("html", () => {
 gulp.task("css", () => {
     gulp.src("./src/**/*.css")
         .pipe(cleanCSS())
+        .pipe(autoprefixer())
+        .pipe(gulp.dest("dist"))
+})
+
+//编译sass
+gulp.task("sass", () => {
+    gulp.src("./src/**/*.sass")
+        .pipe(sass())
         .pipe(autoprefixer())
         .pipe(gulp.dest("dist"))
 })
